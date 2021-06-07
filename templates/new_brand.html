@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <div class="container">
+        <h1 class="text-center bg-info">{{title}}</h1>
+
+        <form action="add_brand.php" method="POST" enctype ="multipart/form-data">
+
+            <div class="form-group">
+                <label for="BrandName">Название бренда</label>
+                <input type="text" class="form-control" id="BrandName" name="BrandName"  placeholder="Enter brand name">
+                
+                <div class="m-3">
+                    <label for="image" class="form-label">Photo</label>
+                     <input type="file" name = "image" id ="image">
+                 </div>
+
+                <button type="submit" class="btn btn-primary mb-2">Добавить</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

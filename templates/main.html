@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <div class="container">
+        <h1 class="text-center bg-light">Каталог Авто </h1>
+        <div class="m-4">
+            <div class="row justify-content-end">
+                <div class=" col-3  align-self-end bg-white">
+                  <a href="add_brand.php">Добавить бренд</a>
+                  &nbsp;</div>
+              </div>
+
+            <div class="container">
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-">
+                    {{#each brands}}   
+                    <div class="col">  
+                        <div class="p-3 border bg-light">
+                            <a href="car_models.php?brand={{car_brand_name}}" role="button">{{car_brand_name}}
+                                <img src="images/{{brand_photo}}"class="img-fluid">
+                            </a>
+                        </div>    
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <div class="container">
+        <h1 class="text-center bg-light"> </h1>
+        <div class="container">
+            <table class="table table-bordered table-hover">
+                {{#each model}}
+                <div class="row">
+                    <tr class="d-flex">
+                        <td class="col-lg"><a href = "car_details.php?model_id={{car_id}}"> {{car_name}}</a></td>
+                    </tr>
+                </div>
+                {{/each}}
+            </table>
+    </div>
+
+
+    </div>
+</body>

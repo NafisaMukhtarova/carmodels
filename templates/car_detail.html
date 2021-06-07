@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <h1 class="text-center bg-light"> Модель {{car_model_name}} {{car_name}} </h1>
+    <div class="container">
+        <div class="form-group">
+            <label for="Modification">Модификация</label>
+            <input type="text" class="form-control" id="Modification" name="Modification" value = "{{modification}}" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="Capacity">Мощьность, л.с.</label>
+            <input type="text" class="form-control" id="Capacity" name="Capacity" value = "{{capacity}}" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label for="Body_type">Тип кузова</label>
+            <input type="text" class="form-control" id="Body_type" name="Body_type" value = "{{body_type}}" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label for="Year_of_issue">Год выпуска</label>
+            <input type="text" class="form-control" id="Year_of_issue" name="Year_of_issue" value = "{{year_of_issue}}" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label for="Year_end">Год закрытия</label>
+            <input type="text" class="form-control" id="Year_end" name="Year_end" value = "{{y  ear_end}}" readonly>
+        </div>
+
+    </div>
+</body>
+</html>
