@@ -18,5 +18,7 @@ while ($row = $result->fetch()) {
     //var_dump($row);
 }
 
+//   
+
 var_dump($model);
 echo $handlebars->render("car_detail", $model);

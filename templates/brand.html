@@ -3,20 +3,24 @@
 {{>header.html}}
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <a class="navbar-brand" href="index.php">Home</a>
+    </nav>
     <div class="container">
-        <h1 class="text-center bg-light">Модельный ряд </h1>
+        <h1 class="text-center bg-warning">Модельный ряд </h1>
         {{#each brand}} 
         <div class="col-lg-1">
             <h2 class="text-center">{{car_brand_name}}</h2>  
             <img src="images/{{brand_photo}}"class="img-fluid">
         </div>
-        {{/each}}
+        
 
         <div class="row justify-content-end">
             <div class=" col-3  align-self-end bg-white">
-              <a href="add_model.php">Добавить модель</a>
+              <a href="add_model.php?brand_id={{car_brand_id}}">Добавить модель</a>
               &nbsp;</div>
           </div>
+        {{/each}}
 
         <div class="container">
             <table class="table table-bordered table-hover">

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <a class="navbar-brand" href="index.php">Home</a>
+    </nav>
+    <div class="container">
+        <h1 class="text-center bg-warning">{{title}}</h1>
+
+        <form action="add_model.php" method="POST" enctype ="multipart/form-data">
+
+            
+                
+            <div class="form-group">
+                <label for="ModelName">Бренд</label>
+                <select class="form-control" id="Brandid" name="Brandid">
+                    {{#each brand}}   
+                    <option value="{{car_brand_id}}">{{car_brand_name}}</option>
+                    {{/each}}
+                </select>
+
+                <label for="ModelName">Наименование модели</label>
+                <input type="text" class="form-control" id="ModelName" name="ModelName"  placeholder="Enter model name">
+            </div>
+
+            
+                <button type="submit" class="btn btn-primary mb-2">Добавить</button>
+            
+        </form>
+    </div>
+
+</body>
+</html>
