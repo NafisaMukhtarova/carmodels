@@ -1,16 +1,33 @@
-CREATE TABLE car_brands (car_brand_id INT NOT NULL AUTO_INCREMENT,
-                            car_brand_name VARCHAR(100),
-                            brand_photo VARCHAR(50),
-                        PRIMARY KEY(car_brand_id),
-                        UNIQUE(car_brand_name));
-CREATE TABLE car_models(car_model_id INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE car_brands (
+    id INT NOT NULL AUTO_INCREMENT,
+    created_at DATETIME,
+    updated_at DATETIME,
+    deleted_at DATETIME,
+
+    car_brand_name VARCHAR(100),
+    brand_photo VARCHAR(50),
+    
+    PRIMARY KEY(id),
+    UNIQUE(car_brand_name)
+);
+
+
+
+CREATE TABLE car_models(
+    id INT NOT NULL AUTO_INCREMENT,
                             car_model_name VARCHAR(100),
                             car_brand INT,
                         PRIMARY KEY(car_model_id),
-                        FOREIGN KEY(car_brand) REFERENCES car_brands (car_brand_id) );
+                        FOREIGN KEY(car_brand) REFERENCES car_brands (car_brand_id) 
+);
+
+
 CREATE TABLE body_types(body_type_id INT NOT NULL AUTO_INCREMENT,
                             body_type VARCHAR(100),
-                        PRIMARY KEY(body_type_id));
+                        PRIMARY KEY(body_type_id)
+                        );
+
+
 CREATE TABLE cars(car_id INT NOT NULL AUTO_INCREMENT,
                         car_name VARCHAR(100),
                         car_model INT,

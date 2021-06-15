@@ -1,6 +1,6 @@
 <?php
 
-require_once ("./vendor/autoload.php");
+require_once ("../vendor/autoload.php");
 //require_once 'connection.php';
 
 use Handlebars\Handlebars;
@@ -9,14 +9,16 @@ use Handlebars\Loader\FilesystemLoader;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
+$appdir = dirname(__DIR__);
+
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable($appdir);
 $dotenv->load();
 
 $log = new Logger('CARS');
-$log->pushHandler(new StreamHandler(__DIR__ .'/logs/debug/log', Logger::DEBUG));
+$log->pushHandler(new StreamHandler($appdir.'/logs/debug/log', Logger::DEBUG));
 
 # Set the partials files
-$partialsDir = __DIR__."/templates";
+$partialsDir = $appdir."/templates";
 $partialsLoader = new FilesystemLoader($partialsDir,
     [
         "extension" => "html"
@@ -74,6 +76,8 @@ class Config
         return $pdo;
     }
 }
+
+//$_ENV[''];
 
 $config = new Config(getenv('CONFIG_DB'),getenv('CONFIG_USER'),getenv('CONFIG_PASSWORD'),getenv('CONFIG_HOST'));
 $pdo = $config->Connect_PDO($log);
