@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <a class="navbar-brand" href="index.php">Home</a>
+    </nav>
+    <div class="container ">
+        <h1 class="text-center bg-warning">Галарея </h1>
+
+
+    <div class="row justify-content-end">
+        <div class=" col-3  align-self-end bg-white">
+          <a href="add_gallery.php?car_id={{car_id}}">Добавить</a>
+          &nbsp;</div>
+      </div>
+
+    <div class="container">
+        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-">
+            {{#each photos}}   
+            <div class="col">  
+                <div class="p-3 border bg-light">
+                    
+                        <img src="images/gallery/{{car_photo}}"class="img-fluid">
+            
+                </div>    
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</body>
+</html>

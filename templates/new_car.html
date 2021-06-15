@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <a class="navbar-brand" href="index.php">Home</a>
+    </nav>
+    <div class="container">
+        <h1 class="text-center bg-warning">{{title}}</h1>
+    
+
+        <form action="add_car_detail.php" method="POST" enctype ="multipart/form-data">
+
+            <div class="form-group">
+                <label for="Modelid"> Модель</label>
+                <select class="form-control" id="Modelid" name="Modelid">
+                    {{#each model}}   
+                    <option value="{{car_model_id}}">{{car_model_name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div>
+                <label for="CarName">  Подробное наименование</label>
+                <input type="text" class="form-control" id="CarName" name="CarName"  placeholder="Enter car name">
+            </div>
+            <div>
+                <label for="CarModification"> Модификация</label>
+                <input type="text" class="form-control" id="CarModification" name="CarModification"  placeholder="Enter car modification">
+            </div>
+
+            <div class="form-group">
+                <label for="BodyType"> Тип кузова</label>
+                <select class="form-control" id="BodyTypeid" name="BodyTypeid">
+                    {{#each body_type}}   
+                    <option value="{{body_type_id}}">{{body_type}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div>
+                <label for="CarCapacity"> Мощность двигателя, л.с.</label>
+                <input type="text" class="form-control" id="CarCapacity" name="CarCapacity"  placeholder="Enter car capacity">
+            </div>
+
+            <div>
+                <label for="CarYearStart">Года начала выпуска</label>
+                <input type="number" class="form-control" id="CarYearStart" name="CarYearStart"  placeholder="YYYY" min ="1900" max = "2030">
+            </div>
+            <div>
+                <label for="CarYearStop"> Год окончания выпуска</label>
+                <input type="text" class="form-control" id="CarYearStop" name="CarYearStop"  placeholder="YYYY" min ="1900" max = "2030">
+            </div>
+            <!-- надо реализовать ввод года-->
+            <script>
+                document.querySelector("input[type=number]")
+                .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+              </script>
+
+            <button type="submit" class="btn btn-primary mb-2">Добавить</button>
+            
+        </form>
+    </div>
+
+   
+</body>
+</html>

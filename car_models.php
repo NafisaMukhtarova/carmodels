@@ -4,8 +4,8 @@ require_once 'bootstrap.php';
 
 //var_dump($_GET);
 $brand = $_GET['brand'];
-var_dump($brand);
-$result = $pdo->prepare("SELECT * FROM `car_brands` A,`car_models`B WHERE A.`car_brand_id`=B.`car_brand` AND A.`car_brand_name`=? ");
+//var_dump($brand);
+$result = $pdo->prepare("SELECT * FROM `car_brands` A,`car_models`B WHERE A.`car_brand_id`=B.`car_brand` AND A.`car_brand_name`=? ORDER BY B.`car_model_name`");
 $result->execute(array($brand));
 while ($row = $result->fetch()) {
     $model_list[] = $row;
