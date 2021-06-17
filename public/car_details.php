@@ -3,7 +3,7 @@
 require_once 'bootstrap.php';
 
 //var_dump($_GET);
-$car_id = $_GET['model_id'];
+$car_id = $_GET['car_id'];
 $result = $pdo->prepare("SELECT A.`car_name`, A.`car_id`,A.`modification`,A.`capacity`,A.`year_of_issue`,A.`year_end`,B.`car_model_name`, C.`body_type` 
                             FROM `cars` A,`car_models` B, `body_types` C 
                             WHERE A.`car_model`= B.`car_model_id` 

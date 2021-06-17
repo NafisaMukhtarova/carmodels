@@ -39,5 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             echo $e->getMessage();
         }
 
-    header('Location: /car_models.php');
+    $url = "/car_models.php?brand_id=$brand_id";//  генерируем url- обратный переход на список моделей
+       
+    header("Location: $url");
 }

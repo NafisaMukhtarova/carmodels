@@ -51,10 +51,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     try {
         $result->execute($data);
-        $log->debug('Добавлена запись в таблицу Car_Models ', ['car_model' => $data[':cname'], 'car_model_id'=>$pdo->lastInsertId()]);
+        $log->debug('Добавлена запись в таблицу Car_Models ', ['car_model' => $data[':cname'], 'car_id'=>$pdo->lastInsertId()]);
     } catch(PDOException $e) {
             $log->error('Ошибка добавления записи в таблицу Car_Models', ['message' => $e->getMessage()]);
             echo $e->getMessage();
     }
 
+    $url = "/cars.php?model_id=$modelid";//  генерируем url- обратный переход на список автомобилей
+       
+    header("Location: $url");
 }

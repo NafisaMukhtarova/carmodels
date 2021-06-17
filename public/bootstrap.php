@@ -11,7 +11,7 @@ use Monolog\Handler\StreamHandler;
 
 $appdir = dirname(__DIR__);
 
-$dotenv = Dotenv\Dotenv::createUnsafeImmutable($appdir);
+$dotenv = Dotenv\Dotenv::createImmutable($appdir);
 $dotenv->load();
 
 $log = new Logger('CARS');
@@ -77,7 +77,10 @@ class Config
     }
 }
 
-//$_ENV[''];
 
-$config = new Config(getenv('CONFIG_DB'),getenv('CONFIG_USER'),getenv('CONFIG_PASSWORD'),getenv('CONFIG_HOST'));
+$db = $_ENV['CONFIG_DB'];
+$us = $_ENV['CONFIG_USER'];
+$pw = $_ENV['CONFIG_PASSWORD'];
+$ht = $_ENV['CONFIG_HOST'];
+$config = new Config($db,$us,$pw,$ht);
 $pdo = $config->Connect_PDO($log);

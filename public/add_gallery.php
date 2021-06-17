@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             try {
                 $insert_result->execute([':id'=>$id,':photo'=>$photo]);
                 move_uploaded_file($_FILES['image']['tmp_name'],"images/gallery/".$photo);
-                $log->debug('Добавленj фото в галарею ', ['car_id' => $id, 'photo'=>$photo]);
+                $log->debug('Добавлено фото в галарею ', ['car_id' => $id, 'photo'=>$photo]);
             } catch(PDOException $e) {
                     $log->error('Ошибка добавления фото в галерею', ['message' => $e->getMessage()]);
                     echo $e->getMessage();
@@ -72,5 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             exit();
         }
     }
-    header('Location: /car_gallery.php');
+    $url = "/car_gallery.php?car_id=$id";//  генерируем url- обратный переход на список автомобилей
+       
+    header("Location: $url");
+    
 }
