@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include "header.html" %}
+    <head>
+<title> Cars </title>
+    </head>
+    <body>
+        {% include "navbar.html" %}
+        <div class="container">
+            <h1>{{ title}} {{car_model}}</h1> 
+            <div class="m-4">
+
+                <table class="table table-bordered table-hover">
+                    {% for model in models%}
+                    <div class="row">
+                        <tr class="d-flex">
+                            <td class="col-lg"><a href = "car_details.php?car_id={{model.car_id}}"> {{model.car_name}}</a></td>
+                        </tr>
+                    </div>
+                    {% endfor %}
+                </table>
+            
+            </div>
+        </div>
+    </body>
+</html>
