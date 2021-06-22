@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "header.html" %}
+    <head>
+<title> Gallery </title>
+    </head>
+    <body>
+        {% include "navbar.html" %}
+
+        <div class="container">
+            <h1>{{title}}</h1>
+
+            <div class="container">
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-">
+                    {% for photo in photos %}   
+                    <div class="col">  
+                        <div class="p-3 border bg-light">
+                                {{photo.car_name}}
+                                <img src="/images/gallery/{{photo.car_photo}}"class="img-fluid">
+                    
+                        </div>    
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

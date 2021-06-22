@@ -20,8 +20,6 @@ while ($row = $result_model->fetch(PDO::FETCH_ASSOC)) {
 }
 
 $model = ['title'=>'Модельный ряд модели ','models'=>$model_cars,'car_model'=>$car_model,'car_brand'=>$car_brand,'car_model_id'=>$car_model_id];
-var_dump($model);
-
-
+//var_dump($model);
 $template = $twig->load('car.html');
 echo $template->render($model);
