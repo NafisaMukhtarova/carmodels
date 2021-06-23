@@ -14,5 +14,5 @@ while ($row = $result->fetch()) {
 
 //   
 $model= ['title'=>" Галерея",'car_id'=>$car_id,'photos'=>$model_photo];
-var_dump($model);
+//var_dump($model);
 echo $handlebars->render("car_photo_gallery", $model);
