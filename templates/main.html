@@ -9,11 +9,29 @@
     <div class="container">
         <h1 class="text-center bg-warning">Каталог Авто </h1>
         <div class="m-4">
+            {{# if user }}
+            <div class="row justify-content-end">
+                <div class=" col-3  align-self-end bg-white">
+                  <p>Вы авторизованы как {{user.user_name}}</p>
+                  <a href="exit.php">Выход</a>
+                  &nbsp;</div>
+              </div>
+            {{else}}
+            <div class="row justify-content-end">
+                <div class=" col-3  align-self-end bg-white">
+                  <a href="auth.php">Авторизация</a>
+                  &nbsp;</div>
+              </div>
+            {{/if}}
+
+            {{# if user.admin}}
             <div class="row justify-content-end">
                 <div class=" col-3  align-self-end bg-white">
                   <a href="add_brand.php">Добавить бренд</a>
                   &nbsp;</div>
               </div>
+             {{else}}
+             {{/if}} 
 
             <div class="container">
                 <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-">

@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     {% include "header.html" %}
-    <head>
-<title> Car brands </title>
-    </head>
+    
     <body>
         {% include "navbar.html" %}
         <div class="container">
@@ -17,7 +15,7 @@
                         <div class="col">  
                             <div class="p-3 border bg-light">
                                 <a href="car_models.php?brand_id={{ brand.car_brand_id }}" role="button">{{ brand.car_brand_name }}
-                                    <img src="twigtemplates/images/{{brand.brand_photo}}"class="img-fluid">
+                                    <img src="/images/{{brand.brand_photo}}"class="img-fluid">
                                 </a>
                             </div>    
                         </div>

@@ -8,19 +8,39 @@
     </nav>
     <div class="container">
         <h1 class="text-center bg-warning">Модельный ряд </h1>
-        {{#each brand}} 
+         
         <div class="col-lg-1">
             <h2 class="text-center">{{car_brand_name}}</h2>  
             <img src="images/{{brand_photo}}"class="img-fluid">
         </div>
         
+        {{#if user}}
+        <div class="row justify-content-end">
+            <div class=" col-3  align-self-end bg-white">
+              <p>
+                Вы авторизованы как {{user.user_name}}
+              </p>
+                <a href=" exit.php">Выход</a>
+              &nbsp;</div>
+          </div>
+        {{else}}
+        <div class="row justify-content-end">
+            <div class=" col-3  align-self-end bg-white">
+              <a href="auth.php">Авторизация</a>
+              &nbsp;</div>
+          </div>
+        {{/if}}
 
+
+        {{# if user.admin}}    
         <div class="row justify-content-end">
             <div class=" col-3  align-self-end bg-white">
               <a href="add_model.php?brand_id={{car_brand_id}}">Добавить модель</a>
               &nbsp;</div>
           </div>
-        {{/each}}
+          {{else}}
+          {{/if}}
+           
 
         <div class="container">
             <table class="table table-bordered table-hover">
