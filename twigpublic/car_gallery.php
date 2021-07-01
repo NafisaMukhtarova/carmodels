@@ -13,6 +13,6 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 }
 //   
 $model= ['title'=>" Галерея",'car_id'=>$car_id,'photos'=>$model_photo];
-var_dump($model);
+//var_dump($model);
 $template = $twig->load('car_photo_gallery.html');
 echo $template->render($model);

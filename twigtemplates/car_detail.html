@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "main.html" %}
 
-    {% include "header.html" %}
-    <head>
-<title> Car detail </title>
-    </head>
-    <body>
-
-        {% include "navbar.html" %}
-        <div class="container">
-        <h1 class="text-center bg-warning"> Модель {{car_model_name}} {{car_name}} </h1>
+{% block body %}
+        <h2 class="text-center bg-warning"> Модель {{car_model_name}} {{car_name}} </h2>
             <div class="container">
                 <div class="form-group">
                     <label for="Modification">Модификация</label>
@@ -42,6 +34,4 @@
                     &nbsp;</div>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+{% endblock %}

@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% include "header.html" %}
-    <head>
-<title>  Car models </title>
-    </head>
-    <body>
-        {% include "navbar.html" %}
+{% extends "main.html" %}
 
-        <div class="container">
-            <h1>{{ title}} {{brand}}</h1> 
+{% block body %}
+            <h2 class="text-center bg-warning">{{brand}}</h2> 
             <div class="m-4">
             </div>
         </div>
@@ -23,7 +16,4 @@
                 </div>
                 {% endfor %}
             </table>
-        </div>
-
-    </body>
-    </html>
+        {% endblock %}
