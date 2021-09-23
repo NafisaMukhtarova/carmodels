@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '76bb24a67d7438378bbf9584551d17462da6fb03',
+    'reference' => 'a20b2069a644425c6b0f477a4801d217f1b640f6',
     'name' => '__root__',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '76bb24a67d7438378bbf9584551d17462da6fb03',
+      'reference' => 'a20b2069a644425c6b0f477a4801d217f1b640f6',
     ),
     'graham-campbell/result-type' => 
     array (
@@ -72,6 +72,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '994ecccd8f3283ecf5ac33254543eb0ac946d525',
+    ),
+    'phpstan/phpstan' => 
+    array (
+      'pretty_version' => '0.12.99',
+      'version' => '0.12.99.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b4d40f1d759942f523be267a1bab6884f46ca3f7',
     ),
     'psr/log' => 
     array (

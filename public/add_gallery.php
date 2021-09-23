@@ -72,8 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             exit();
         }
     }
-    $url = "/car_gallery.php?car_id=$id";//  генерируем url- обратный переход на список автомобилей
-       
-    header("Location: $url");
     
+$url = 'Location: /'.$_ENV['LOCATION'].'car_gallery.php?car_id=$id';//  генерируем url- обратный переход на список автомобилей
+header($url);
 }

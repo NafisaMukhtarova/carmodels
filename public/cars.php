@@ -8,6 +8,7 @@ session_start();
 $car_model_id = $_GET['model_id'];
 $result_cars = $pdo->prepare("SELECT * FROM `cars` A,`car_models` B WHERE A.`car_model`= B.`car_model_id` AND B.`car_model_id`= ?");
 $result_cars->execute(array($car_model_id));
+$model_cars=[];
 while ($row = $result_cars->fetch()) {
     $model_cars[] = $row;
     //var_dump($row);

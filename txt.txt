@@ -1,0 +1,4 @@
+CONFIG_DB = "u1409845_db_nafisa"
+CONFIG_USER = "u1409845_nafisa"
+CONFIG_PASSWORD = "Mba25fly!"
+CONFIG_HOST = "localhost"

@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             echo $e->getMessage();
     }
 
-    $url = "/cars.php?model_id=$modelid";//  генерируем url- обратный переход на список автомобилей
-       
-    header("Location: $url");
+    $url = 'Location: /'.$_ENV['LOCATION'].'cars.php?model_id=$modelid';//  генерируем url- обратный переход на список автомобилей
+    
+    header($url);
 }

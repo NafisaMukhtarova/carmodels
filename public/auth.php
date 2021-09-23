@@ -25,5 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $_SESSION['user_id']= $user_id['user_id'];
     $log->debug('Авторизация пользователя: ', ['user' => $user_id['name']]);
 
-    header('Location: /');
+    $header = 'Location: /'.$_ENV['LOCATION'];
+    header($header);
 }

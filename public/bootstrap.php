@@ -31,7 +31,6 @@ $handlebars = new Handlebars([
     "partials_loader" => $partialsLoader
 ]);
 
-
 class Config
 {
     private $user = "" ; // пользователь
@@ -76,7 +75,6 @@ class Config
         return $pdo;
     }
 }
-
 
 $db = $_ENV['CONFIG_DB'];
 $us = $_ENV['CONFIG_USER'];

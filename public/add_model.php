@@ -38,8 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             $log->error('Ошибка добавления записи в таблицу Car_Models', ['message' => $e->getMessage()]);
             echo $e->getMessage();
         }
-
-    $url = "/car_models.php?brand_id=$brand_id";//  генерируем url- обратный переход на список моделей
+        
+$url = 'Location: /'.$_ENV['LOCATION'].'car_models.php?brand_id=$brand_id';//  генерируем url- обратный переход на список моделей
        
-    header("Location: $url");
+header($url);
 }

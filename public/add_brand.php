@@ -73,5 +73,6 @@ var_dump($_FILES);
         echo $e->getMessage();
     }
 
-    header('Location: /');
+$header = 'Location: /'.$_ENV['LOCATION'];
+header($header);
 }

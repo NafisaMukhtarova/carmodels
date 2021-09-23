@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 require_once 'bootstrap.php';
 
@@ -13,6 +13,7 @@ while ($row = $result->fetch()) {
 }
 //var_dump($model_list);
 $model = ['brands'=>$model_list];
+
 if (isset($_SESSION['user_id'])) {
     $result_user = $pdo->prepare("SELECT * FROM `users` WHERE `user_id`=?");
     $result_user->execute([$_SESSION['user_id']]);
